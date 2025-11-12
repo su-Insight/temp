@@ -1,0 +1,4 @@
+test:
+  config-nums: 5
+src:
+  config-level: 6
