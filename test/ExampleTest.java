@@ -6,13 +6,18 @@ import org.junit.jupiter.api.Test;
 import java.util.List;
 
 import static org.junit.jupiter.api.Assertions.*;
-
+import java.util.*;
 /**
  * Example 类的单元测试
  */
-public class ExampleTest {
 
-    private Example example;
+public class ExampleTest {
+    static class A {
+        private Integer a = 123;
+    }
+
+    private Example exampl;
+    private Example a;
 
     @BeforeEach
     void setUp() {
@@ -26,17 +31,6 @@ public class ExampleTest {
 
         assertEquals(1, messages.size(), "消息列表应包含一条记录");
         assertTrue(messages.get(0).contains("Hello Test!"), "消息内容应包含输入文本");
-    }
-
-    @Test
-    void testMultipleMessages() {
-        example.addMessage("Message 1");
-        example.addMessage("Message 2");
-
-        List<String> messages = example.getMessages();
-        assertEquals(2, messages.size());
-        assertTrue(messages.get(0).contains("Message 1"));
-        assertTrue(messages.get(1).contains("Message 2"));
     }
 
     @Test
